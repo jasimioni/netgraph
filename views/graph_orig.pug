@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    script(src='/inc/dygraphs/dygraph.min.js')
+    link(rel='stylesheet', href='/inc/dygraphs/dygraph.min.css')
+    h1 Gráfico
+    div(id='graph' style='width:1024px; height:300px;')
+    script.
+        var data = !{graphData};
+
+        new Dygraph(
+            document.getElementById("graph"),
+            data,
+            {
+                title : '#{graphTitle}',
+                labels: ['X', 'RX', 'TX' ],
+                animatedZooms: true,
+            }
+        );

@@ -1,0 +1,23 @@
+extends ../layout
+
+block menu
+    a.pure-menu-heading(href='#') #{node}
+    ul.pure-menu-list
+        each iface in interfaces
+            - active = type === iface.type && oidindex === iface.oidindex
+            li.pure-menu-item(class=active ? 'pure-menu-selected' : '')
+                a.pure-menu-link.lnk-plot-graph(node=iface.node type=iface.type oidindex=iface.oidindex)= iface.if_name
+
+
+block main
+    .header
+    .content
+        #cstGraphLegend
+        #graph(style='width: 100%;')
+
+    script(src='/inc/dygraphs/dist/dygraph.min.js')
+    script(src='/js/graph.js')
+    link(rel='stylesheet', href='/inc/dygraphs/dist/dygraph.min.css')
+    if type && oidindex
+        script.
+            plotGraph('#{node}', '#{type}', '#{oidindex}');

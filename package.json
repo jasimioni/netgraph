@@ -1,0 +1,34 @@
+{
+  "name": "netgraph",
+  "version": "1.0.0",
+  "description": "Gráficos de Rede",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if [[ ${NODE_ENV} == \"production\" ]]; then npm run start:prod; else npm run start:dev; fi",
+    "start:dev": "nodemon app.js",
+    "start:prod": "node.js"    
+  },
+  "author": "João André Simioni",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "await-sleep": "0.0.1",
+    "body-parser": "^1.19.0",
+    "child-process-promise": "^2.2.1",
+    "dotenv": "^8.2.0",
+    "dygraphs": "^2.1.0",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mysql2": "^2.1.0",
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
+    "pug": "^3.0.0",
+    "purecss": "^2.0.3",
+    "sequelize": "^6.3.3",
+    "sql-generator": "0.0.8",
+    "xml2json": "^0.12.0"
+  }
+}
