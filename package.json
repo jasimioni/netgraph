@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if [[ ${NODE_ENV} == \"production\" ]]; then npm run start:prod; else npm run start:dev; fi",
     "start:dev": "nodemon app.js",
-    "start:prod": "node.js"    
+    "start:prod": "node.js"
   },
   "author": "João André Simioni",
   "license": "ISC",
